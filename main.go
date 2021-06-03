@@ -44,7 +44,7 @@ func hc() http.HandlerFunc {
 
 func GenerateName() string {
 	id := uuid.New()
-	return fmt.Sprintf("%s.mp4", id.String())
+	return fmt.Sprintf("%s.mp3", id.String())
 }
 
 func synthesizeText(ttsClient *texttospeech.Client, gcsClient *storage.Client) http.HandlerFunc {
