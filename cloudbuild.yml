@@ -1,0 +1,12 @@
+steps:
+  - name: golang
+    entrypoint: /bin/bash
+    args:
+      - -c
+      - |
+        go test -v ./...
+  - name: 'gcr.io/cloud-builders/docker'
+    args: [ 'build', '-t',
+            'gcr.io/imre-build-test/text-to-speech-demo:$SHORT_SHA', '.' ]
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/imre-build-test/text-to-speech-demo:$SHORT_SHA']
