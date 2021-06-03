@@ -13,4 +13,5 @@ steps:
 #   deploy to cloud run in staging
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: gcloud
-    args: ['run', 'deploy', 'text-to-speech-stg', '--image', 'gcr.io/imre-build-test/text-to-speech-demo:$SHORT_SHA', '--region', 'us-central1', '--platform', 'managed']
+    args: ['run', 'deploy', 'text-to-speech-stg', '--image', 'gcr.io/imre-build-test/text-to-speech-demo:$SHORT_SHA',
+           '--region', 'us-central1', '--platform', 'managed', '--allow-unauthenticated']
